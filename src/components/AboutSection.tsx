@@ -7,10 +7,8 @@ const AboutSection = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-agri-green-dark mb-6">
               Rooted in Tradition, Growing with Innovation
             </h2>
-            <p className="text-lg text-gray-700 mb-6">Công ty Trang Nông là doanh nghiệp chuyên sản xuất kinh doanh, xuất nhập khẩu hạt giống F1 và OP rau củ quả hoa, thuốc bảo vệ thực vật, phân bón lá, vật tư nông nghiệp. Nghiên cứu, chọn tạo thử nghiệm giống mới.</p>
-            <p className="text-lg text-gray-700 mb-8">
-              We believe that modern agriculture must balance productivity with responsibility. Our team of experts combines generations of farming wisdom with cutting-edge research and technology to develop solutions that work in harmony with nature.
-            </p>
+            <p className="text-lg text-gray-700 mb-6">Công ty Trang Nông là doanh nghiệp chuyên sản xuất kinh doanh, xuất nhập khẩu hạt giống F1 và OP rau củ quả hoa, thuốc bảo vệ thực vật, phân bón lá, vật tư nông nghiệp. Nghiên cứu, chọn tạo thử nghiệm giống mới. Từ năm 1996, công ty đã trở thành thành viên của Hiệp Hội Giống Châu Á Thái Bình Dương (APSA). Công ty đang là thành viên của Hiệp Hội thương mại giống cây trồng Việt Nam (VSTA).</p>
+            <p className="text-lg text-gray-700 mb-8">Sản phẩm về giống cây trồng của Công ty đã đạt giải thưởng bông lúa vàng hội chợ triển lãm nông nghiệp quốc tế - Cần Thơ – Việt Nam; huy chương vàng hội chợ triển lãm nông nghiệp quốc tế Cần Thơ – Việt Nam; Huy chương vàng hội chợ triển lãm tuần lễ xanh quốc tế Hà Nội – Việt Nam; Cúp vàng vì sự nghiệp xanh Việt Nam.</p>
             <div className="flex flex-wrap gap-4">
               <Button className="bg-agri-green hover:bg-agri-green-dark text-white">
                 Our Mission
