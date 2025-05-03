@@ -49,7 +49,7 @@ const Footer = () => {
           </div>
           
           <div className="md:col-span-1">
-            <h3 className="text-lg font-bold mb-4">Company</h3>
+            <h3 className="text-lg mb-4 text-slate-950 font-normal">Kho và trại nghiên cứu</h3>
             <ul className="space-y-2">
               <li><a href="#about" className="hover:text-agri-earth-light transition-colors">About Us</a></li>
               <li><a href="#" className="hover:text-agri-earth-light transition-colors">Our Team</a></li>
