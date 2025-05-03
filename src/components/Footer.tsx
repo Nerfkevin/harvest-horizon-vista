@@ -38,7 +38,7 @@ const Footer = () => {
           </div>
           
           <div className="md:col-span-1">
-            <h3 className="text-lg font-bold mb-4 text-slate-950">Trụ sở Trang Nông</h3>
+            <h3 className="text-lg mb-4 text-slate-950 font-normal">Trụ sở Trang Nông</h3>
             <ul className="space-y-2">
               <li><a href="#" className="hover:text-agri-earth-light transition-colors">Crop Management</a></li>
               <li><a href="#" className="hover:text-agri-earth-light transition-colors">Soil Restoration</a></li>
