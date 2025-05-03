@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,16 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Agriculture theme colors
+				agri: {
+					'green-dark': '#283618',
+					'green': '#6A994E',
+					'green-light': '#A7C957',
+					'earth': '#BC6C25',
+					'earth-light': '#DDA15E',
+					'cream': '#F2E8CF',
+					'cream-light': '#FEFAE0',
 				}
 			},
 			borderRadius: {
@@ -84,11 +95,37 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'slide-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateX(-20px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateX(0)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.5s ease-out forwards',
+				'slide-in': 'slide-in 0.5s ease-out forwards'
+			},
+			fontFamily: {
+				'sans': ['Inter', 'sans-serif'],
+				'serif': ['Merriweather', 'serif']
 			}
 		}
 	},
