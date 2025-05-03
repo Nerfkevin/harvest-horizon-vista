@@ -1,5 +1,5 @@
 
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
@@ -13,7 +13,7 @@ import RevealOnScroll from '../components/RevealOnScroll';
 const Index = () => {
   useEffect(() => {
     // Update page title
-    document.title = "GreenHarvest - Sustainable Agricultural Solutions";
+    document.title = "Trang Nông - Giải pháp nông nghiệp bền vững";
     
     // Apply animation to elements with reveal-animation class
     const handleScroll = () => {

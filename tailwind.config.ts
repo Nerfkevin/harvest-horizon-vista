@@ -63,15 +63,15 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Agriculture theme colors
-				agri: {
-					'green-dark': '#283618',
-					'green': '#6A994E',
-					'green-light': '#A7C957',
-					'earth': '#BC6C25',
-					'earth-light': '#DDA15E',
-					'cream': '#F2E8CF',
-					'cream-light': '#FEFAE0',
+				// Trang Nong theme colors
+				'trang-nong': {
+					'green': '#00923F', // Main green from the logo
+					'green-light': '#4CAF50',
+					'green-dark': '#046A38',
+					'red': '#E63946', // Red from the logo sunburst
+					'cream': '#F8F4E3',
+					'white': '#FFFFFF',
+					'gray': '#6B7280',
 				}
 			},
 			borderRadius: {

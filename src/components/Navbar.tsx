@@ -1,11 +1,13 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Wheat } from 'lucide-react';
+import { Globe } from 'lucide-react';
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [language, setLanguage] = useState<'vi' | 'en'>('vi');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,39 +22,100 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const toggleLanguage = () => {
+    setLanguage(language === 'vi' ? 'en' : 'vi');
+  };
+
+  const navItems = language === 'vi' ? [
+    { name: 'Giới thiệu', href: '#about' },
+    { name: 'Sản phẩm', href: '#products' },
+    { name: 'Tư vấn', href: '#services' },
+    { name: 'Tin tức', href: '#testimonials' },
+  ] : [
+    { name: 'About', href: '#about' },
+    { name: 'Products', href: '#products' },
+    { name: 'Consulting', href: '#services' },
+    { name: 'News', href: '#testimonials' },
+  ];
+
+  const contactText = language === 'vi' ? 'Liên hệ' : 'Contact';
+
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <a href="#" className="flex items-center gap-2 text-agri-green-dark">
-          <Wheat size={32} className={`${isScrolled ? 'text-agri-green-dark' : 'text-white'}`} />
-          <span className={`text-xl font-serif font-bold ${isScrolled ? 'text-agri-green-dark' : 'text-white'}`}>
-            GreenHarvest
-          </span>
+        <a href="#" className="flex items-center gap-2">
+          <img 
+            src="/public/lovable-uploads/d74f11c2-430e-4a75-91f1-26de8238f16f.png" 
+            alt="Trang Nông Logo" 
+            className="h-10 md:h-12"
+          />
         </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
-          <NavLinks isScrolled={isScrolled} />
-          <Button className="bg-agri-green hover:bg-agri-green-dark text-white">Contact Us</Button>
+          <NavLinks 
+            navItems={navItems} 
+            isScrolled={isScrolled} 
+          />
+          <Button 
+            className="bg-green-600 hover:bg-green-700 text-white"
+            onClick={() => {
+              const contactSection = document.getElementById('contact');
+              if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+          >
+            {contactText}
+          </Button>
+          <button onClick={toggleLanguage} className="flex items-center gap-1 px-2 py-1 rounded text-sm">
+            <Globe size={18} className={isScrolled ? "text-green-600" : "text-white"} />
+            <span className={`uppercase font-medium ${isScrolled ? "text-green-600" : "text-white"}`}>
+              {language === 'vi' ? 'EN' : 'VI'}
+            </span>
+          </button>
         </nav>
 
         {/* Mobile Navigation Button */}
-        <button 
-          className="md:hidden p-2"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          <div className={`w-6 h-0.5 mb-1.5 ${isScrolled ? 'bg-agri-green-dark' : 'bg-white'} transition-all ${isMobileMenuOpen ? 'transform rotate-45 translate-y-2' : ''}`}></div>
-          <div className={`w-6 h-0.5 mb-1.5 ${isScrolled ? 'bg-agri-green-dark' : 'bg-white'} transition-all ${isMobileMenuOpen ? 'opacity-0' : ''}`}></div>
-          <div className={`w-6 h-0.5 ${isScrolled ? 'bg-agri-green-dark' : 'bg-white'} transition-all ${isMobileMenuOpen ? 'transform -rotate-45 -translate-y-2' : ''}`}></div>
-        </button>
+        <div className="md:hidden flex items-center gap-4">
+          <button onClick={toggleLanguage} className="flex items-center gap-1 px-2 py-1 rounded text-sm">
+            <Globe size={18} className={isScrolled ? "text-green-600" : "text-white"} />
+            <span className={`uppercase font-medium ${isScrolled ? "text-green-600" : "text-white"}`}>
+              {language === 'vi' ? 'EN' : 'VI'}
+            </span>
+          </button>
+          <button 
+            className="p-2"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <div className={`w-6 h-0.5 mb-1.5 ${isScrolled ? 'bg-green-600' : 'bg-white'} transition-all ${isMobileMenuOpen ? 'transform rotate-45 translate-y-2' : ''}`}></div>
+            <div className={`w-6 h-0.5 mb-1.5 ${isScrolled ? 'bg-green-600' : 'bg-white'} transition-all ${isMobileMenuOpen ? 'opacity-0' : ''}`}></div>
+            <div className={`w-6 h-0.5 ${isScrolled ? 'bg-green-600' : 'bg-white'} transition-all ${isMobileMenuOpen ? 'transform -rotate-45 -translate-y-2' : ''}`}></div>
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white shadow-lg absolute w-full">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            <NavLinks mobile={true} isScrolled={true} />
-            <Button className="bg-agri-green hover:bg-agri-green-dark text-white w-full">Contact Us</Button>
+            <NavLinks 
+              navItems={navItems} 
+              isScrolled={true}
+              mobile={true} 
+            />
+            <Button 
+              className="bg-green-600 hover:bg-green-700 text-white w-full"
+              onClick={() => {
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth' });
+                  setIsMobileMenuOpen(false);
+                }
+              }}
+            >
+              {contactText}
+            </Button>
           </div>
         </div>
       )}
@@ -60,15 +123,13 @@ const Navbar = () => {
   );
 };
 
-const NavLinks = ({ mobile = false, isScrolled = true }) => {
-  const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Products', href: '#products' },
-    { name: 'Testimonials', href: '#testimonials' }
-  ];
+interface NavLinkProps {
+  navItems: { name: string; href: string }[];
+  mobile?: boolean;
+  isScrolled?: boolean;
+}
 
+const NavLinks = ({ navItems, mobile = false, isScrolled = true }: NavLinkProps) => {
   return (
     <>
       {navItems.map(item => (
@@ -76,10 +137,17 @@ const NavLinks = ({ mobile = false, isScrolled = true }) => {
           key={item.name}
           href={item.href}
           className={`
-            font-medium transition-colors hover:text-agri-earth
-            ${mobile ? 'block py-2 text-agri-green-dark' : ''}
-            ${!isScrolled && !mobile ? 'text-white' : 'text-agri-green-dark'}
+            font-medium transition-colors hover:text-green-700
+            ${mobile ? 'block py-2 text-green-600' : ''}
+            ${!isScrolled && !mobile ? 'text-white' : 'text-green-600'}
           `}
+          onClick={(e) => {
+            e.preventDefault();
+            const element = document.querySelector(item.href);
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}
         >
           {item.name}
         </a>
