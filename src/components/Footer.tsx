@@ -60,7 +60,7 @@ const Footer = () => {
           </div>
           
           <div className="md:col-span-1">
-            <h3 className="text-lg font-bold mb-4">Subscribe</h3>
+            <h3 className="text-lg font-bold mb-4 text-slate-950">Chính sách, điều khoản</h3>
             <p className="text-agri-cream-light mb-4">
               Join our newsletter for the latest updates and insights on sustainable agriculture.
             </p>
