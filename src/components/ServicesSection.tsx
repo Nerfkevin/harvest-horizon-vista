@@ -1,6 +1,6 @@
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Flower, Sprout, LeafyGreen, Seed, Tools } from "lucide-react";
+import { Flower, Sprout, LeafyGreen, Wheat, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 type ServiceCardProps = {
@@ -55,12 +55,12 @@ const ServicesSection = () => {
   }, {
     title: "Hạt giống khác",
     description: "Các loại hạt giống đặc biệt, đa dạng chủng loại từ rau củ, quả đến thảo mộc và cây thuốc nam với chất lượng đảm bảo.",
-    icon: <Seed className="w-10 h-10" />,
+    icon: <Wheat className="w-10 h-10" />,
     ctaText: "Khám phá các loại Hạt giống khác"
   }, {
     title: "Vật tư nông nghiệp",
     description: "Cung cấp đầy đủ các loại vật tư, dụng cụ và thiết bị cần thiết cho hoạt động trồng trọt từ nhỏ đến quy mô lớn.",
-    icon: <Tools className="w-10 h-10" />,
+    icon: <Wrench className="w-10 h-10" />,
     ctaText: "Tìm hiểu về Vật tư nông nghiệp"
   }];
 
