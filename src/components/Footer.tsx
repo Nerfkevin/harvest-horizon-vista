@@ -1,15 +1,14 @@
-
 import { Wheat } from "lucide-react";
-
 const Footer = () => {
-  return (
-    <footer className="bg-agri-green-dark text-white">
+  return <footer className="bg-agri-green-dark text-white">
       <div className="container mx-auto py-12 px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <Wheat size={28} />
-              <span className="text-xl font-serif font-bold">GreenHarvest</span>
+              <span className="text-xl font-serif font-bold text-slate-950">CÔNG TY TNHH TM TRANG NÔNG
+
+            </span>
             </div>
             <p className="text-agri-cream-light mb-6">
               Sustainable agricultural solutions for a greener tomorrow.
@@ -39,7 +38,7 @@ const Footer = () => {
           </div>
           
           <div className="md:col-span-1">
-            <h3 className="text-lg font-bold mb-4">Services</h3>
+            <h3 className="text-lg font-bold mb-4 text-slate-950">Trụ sở Trang Nông</h3>
             <ul className="space-y-2">
               <li><a href="#" className="hover:text-agri-earth-light transition-colors">Crop Management</a></li>
               <li><a href="#" className="hover:text-agri-earth-light transition-colors">Soil Restoration</a></li>
@@ -66,15 +65,8 @@ const Footer = () => {
               Join our newsletter for the latest updates and insights on sustainable agriculture.
             </p>
             <form className="flex">
-              <input 
-                type="email"
-                placeholder="Your email"
-                className="px-4 py-2 w-full rounded-l-md focus:outline-none text-gray-800"
-              />
-              <button 
-                type="submit"
-                className="bg-agri-earth hover:bg-agri-earth-light transition-colors px-4 py-2 rounded-r-md"
-              >
+              <input type="email" placeholder="Your email" className="px-4 py-2 w-full rounded-l-md focus:outline-none text-gray-800" />
+              <button type="submit" className="bg-agri-earth hover:bg-agri-earth-light transition-colors px-4 py-2 rounded-r-md">
                 Subscribe
               </button>
             </form>
@@ -94,8 +86,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
