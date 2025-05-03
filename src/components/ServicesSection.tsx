@@ -1,15 +1,20 @@
+
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Sprout, Wheat, Flower, TreeDeciduous, Sun } from "lucide-react";
+import { Flower, Sprout, LeafyGreen, Seed, Tools } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
 type ServiceCardProps = {
   title: string;
   description: string;
   icon: React.ReactNode;
+  ctaText: string;
 };
+
 const ServiceCard = ({
   title,
   description,
-  icon
+  icon,
+  ctaText
 }: ServiceCardProps) => {
   return <Card className="flex flex-col h-full bg-white transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border-t-4 border-agri-green">
       <CardHeader>
@@ -25,33 +30,40 @@ const ServiceCard = ({
       </CardContent>
       <CardFooter>
         <Button variant="link" className="text-agri-earth p-0 hover:text-agri-green">
-          Learn more →
+          {ctaText} →
         </Button>
       </CardFooter>
     </Card>;
 };
+
 const ServicesSection = () => {
   const services = [{
-    title: "Crop Management",
-    description: "Expert solutions for optimizing crop yield and quality through sustainable farming practices and innovative agricultural techniques.",
-    icon: <Wheat className="w-10 h-10" />
+    title: "Hoa",
+    description: "Các loại hạt giống hoa đẹp, chất lượng cao, phù hợp với điều kiện khí hậu Việt Nam và có tỷ lệ nảy mầm tốt.",
+    icon: <Flower className="w-10 h-10" />,
+    ctaText: "Xem thêm các loại hạt giống Hoa"
   }, {
-    title: "Soil Restoration",
-    description: "Revitalize and enhance soil health with our specialized treatments and organic enrichment programs designed for long-term sustainability.",
-    icon: <Sprout className="w-10 h-10" />
+    title: "Rau mầm",
+    description: "Hạt giống rau mầm sạch, an toàn với đa dạng các loại như đậu Hà Lan, đậu xanh, cải mầm và nhiều loại khác.",
+    icon: <Sprout className="w-10 h-10" />,
+    ctaText: "Tìm hiểu về hạt giống Rau mầm"
   }, {
-    title: "Organic Farming",
-    description: "Guidance and infrastructure for transitioning to and maintaining certified organic agricultural operations with minimal environmental impact.",
-    icon: <Flower className="w-10 h-10" />
+    title: "Rau ăn lá",
+    description: "Đa dạng các loại hạt giống rau ăn lá chất lượng cao, dễ trồng, năng suất lớn và phù hợp với điều kiện canh tác Việt Nam.",
+    icon: <LeafyGreen className="w-10 h-10" />,
+    ctaText: "Khám phá hạt giống Rau ăn lá"
   }, {
-    title: "Sustainable Forestry",
-    description: "Responsible forest management services that balance timber harvesting with conservation and biodiversity preservation.",
-    icon: <TreeDeciduous className="w-10 h-10" />
+    title: "Hạt giống khác",
+    description: "Các loại hạt giống đặc biệt, đa dạng chủng loại từ rau củ, quả đến thảo mộc và cây thuốc nam với chất lượng đảm bảo.",
+    icon: <Seed className="w-10 h-10" />,
+    ctaText: "Khám phá các loại Hạt giống khác"
   }, {
-    title: "Solar Integration",
-    description: "Integrate renewable energy solutions with your agricultural operations to reduce costs and environmental footprint.",
-    icon: <Sun className="w-10 h-10" />
+    title: "Vật tư nông nghiệp",
+    description: "Cung cấp đầy đủ các loại vật tư, dụng cụ và thiết bị cần thiết cho hoạt động trồng trọt từ nhỏ đến quy mô lớn.",
+    icon: <Tools className="w-10 h-10" />,
+    ctaText: "Tìm hiểu về Vật tư nông nghiệp"
   }];
+
   return <section id="services" className="section-padding bg-agri-cream-light">
       <div className="container mx-auto">
         <div className="text-center mb-16">
@@ -69,4 +81,5 @@ const ServicesSection = () => {
       </div>
     </section>;
 };
+
 export default ServicesSection;
