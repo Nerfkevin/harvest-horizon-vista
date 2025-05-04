@@ -30,8 +30,8 @@ const AboutSection = () => {
           <div className="bg-agri-cream p-6 rounded-lg text-center reveal-animation" style={{
           animationDelay: '0.2s'
         }}>
-            <div className="text-agri-green-dark text-5xl font-bold">500+</div>
-            <p className="text-gray-600 mt-2">Farms Supported</p>
+            <div className="text-agri-green-dark text-5xl font-bold">20+</div>
+            <p className="text-gray-600 mt-2">Nước xuất khẩu trên toàn thế giới</p>
           </div>
           <div className="bg-agri-cream p-6 rounded-lg text-center reveal-animation" style={{
           animationDelay: '0.4s'
