@@ -9,9 +9,7 @@ const AboutSection = () => {
             <p className="text-lg text-gray-700 mb-8">Sản phẩm về giống cây trồng của Công ty đã đạt giải thưởng bông lúa vàng hội chợ triển lãm nông nghiệp quốc tế - Cần Thơ – Việt Nam; huy chương vàng hội chợ triển lãm nông nghiệp quốc tế Cần Thơ – Việt Nam; Huy chương vàng hội chợ triển lãm tuần lễ xanh quốc tế Hà Nội – Việt Nam; Cúp vàng vì sự nghiệp xanh Việt Nam.</p>
             <div className="flex flex-wrap gap-4">
               <Button className="bg-agri-green hover:bg-agri-green-dark text-slate-950">Read more about us</Button>
-              <Button variant="outline" className="border-agri-green text-agri-green hover:bg-agri-green hover:text-white">
-                Meet Our Team
-              </Button>
+              <Button variant="outline" className="border-agri-green text-agri-green hover:bg-agri-green hover:text-white">Read more about us</Button>
             </div>
           </div>
           <div className="order-1 lg:order-2 reveal-animation">
