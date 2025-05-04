@@ -1,15 +1,12 @@
-
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Flower, Sprout, LeafyGreen, Wheat, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
 type ServiceCardProps = {
   title: string;
   description: string;
   icon: React.ReactNode;
   ctaText: string;
 };
-
 const ServiceCard = ({
   title,
   description,
@@ -35,7 +32,6 @@ const ServiceCard = ({
       </CardFooter>
     </Card>;
 };
-
 const ServicesSection = () => {
   const services = [{
     title: "Hoa",
@@ -63,14 +59,11 @@ const ServicesSection = () => {
     icon: <Wrench className="w-10 h-10" />,
     ctaText: "Tìm hiểu về Vật tư nông nghiệp"
   }];
-
   return <section id="services" className="section-padding bg-agri-cream-light">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-agri-green-dark mb-4 text-left">Các sản phẩm của Trang Nông</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We provide comprehensive agricultural services designed to improve productivity while promoting sustainability and environmental stewardship.
-          </p>
+          
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -81,5 +74,4 @@ const ServicesSection = () => {
       </div>
     </section>;
 };
-
 export default ServicesSection;
