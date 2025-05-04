@@ -19,17 +19,15 @@ const AboutSection = () => {
           <div className="order-1 lg:order-2 reveal-animation">
             <div className="relative">
               <div className="absolute -right-4 -bottom-4 w-full h-full border-2 border-agri-earth rounded-lg"></div>
-              <img src="https://images.unsplash.com/photo-1592982537447-7440770faed7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" alt="Farmers examining crops" className="w-full h-auto rounded-lg object-cover" style={{
-              maxHeight: '500px'
-            }} />
+              
             </div>
           </div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
           <div className="bg-agri-cream p-6 rounded-lg text-center reveal-animation">
-            <div className="text-agri-green-dark text-5xl font-bold">15+</div>
-            <p className="text-gray-600 mt-2">Years of Experience</p>
+            <div className="text-agri-green-dark text-5xl font-bold">87+</div>
+            <p className="text-gray-600 mt-2">Năm kinh nghiệm kinh doanh hạt giống cây trồng</p>
           </div>
           <div className="bg-agri-cream p-6 rounded-lg text-center reveal-animation" style={{
           animationDelay: '0.2s'
