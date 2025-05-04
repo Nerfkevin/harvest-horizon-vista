@@ -8,9 +8,7 @@ const AboutSection = () => {
             <p className="text-lg text-gray-700 mb-6">Công ty Trang Nông chuyên sản xuất kinh doanh, xuất nhập khẩu hạt giống F1, OP rau củ quả, thuốc bảo vệ thực vật, phân bón và vật tư nông nghiệp. Từ năm 1996, công ty đã trở thành thành viên của Hiệp hội Giống Châu Á Thái Bình Dương (APSA) và hiện là thành viên của Hiệp hội Thương mại Giống cây trồng Việt Nam (VSTA). Sản phẩm giống cây trồng của công ty đã đạt nhiều giải thưởng quan trọng trong ngành nông nghiệp.</p>
             <p className="text-lg text-gray-700 mb-8">Sản phẩm về giống cây trồng của Công ty đã đạt giải thưởng bông lúa vàng hội chợ triển lãm nông nghiệp quốc tế - Cần Thơ – Việt Nam; huy chương vàng hội chợ triển lãm nông nghiệp quốc tế Cần Thơ – Việt Nam; Huy chương vàng hội chợ triển lãm tuần lễ xanh quốc tế Hà Nội – Việt Nam; Cúp vàng vì sự nghiệp xanh Việt Nam.</p>
             <div className="flex flex-wrap gap-4">
-              <Button className="bg-agri-green hover:bg-agri-green-dark text-white">
-                Our Mission
-              </Button>
+              <Button className="bg-agri-green hover:bg-agri-green-dark text-slate-950">Read more about us</Button>
               <Button variant="outline" className="border-agri-green text-agri-green hover:bg-agri-green hover:text-white">
                 Meet Our Team
               </Button>
