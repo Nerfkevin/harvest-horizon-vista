@@ -19,9 +19,9 @@ const AboutSection = () => {
           <div className="order-1 lg:order-2 reveal-animation">
             <div className="relative">
               <div className="absolute -right-4 -bottom-4 w-full h-full border-2 border-agri-earth rounded-lg"></div>
-              <img src="https://images.unsplash.com/photo-1592982537447-7440770faed7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" alt="Farmers examining crops" className="w-full h-auto rounded-lg object-cover" style={{
+              <img alt="Farmers examining crops" style={{
               maxHeight: '500px'
-            }} />
+            }} src="/lovable-uploads/b67de097-1ba0-4380-817a-8df98eeb828f.jpg" className="w-full h-auto rounded-lg object-fill" />
             </div>
           </div>
         </div>
