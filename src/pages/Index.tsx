@@ -5,7 +5,7 @@ import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
 import ServicesSection from '../components/ServicesSection';
 import ProductsSection from '../components/ProductsSection';
-import TestimonialsSection from '../components/TestimonialsSection';
+import NewsSection from '../components/NewsSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 import RevealOnScroll from '../components/RevealOnScroll';
@@ -56,7 +56,7 @@ const Index = () => {
         </RevealOnScroll>
         
         <RevealOnScroll>
-          <TestimonialsSection />
+          <NewsSection />
         </RevealOnScroll>
         
         <RevealOnScroll>
