@@ -24,8 +24,8 @@ const AboutSection = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
           <div className="bg-agri-cream p-6 rounded-lg text-center reveal-animation">
-            <div className="text-agri-green-dark text-5xl font-bold">15+</div>
-            <p className="text-gray-600 mt-2">Years of Experience</p>
+            <div className="text-agri-green-dark text-5xl font-bold">87+</div>
+            <p className="text-gray-600 mt-2">Năm kinh nghiệm kinh doanh hạt giống cây trồng</p>
           </div>
           <div className="bg-agri-cream p-6 rounded-lg text-center reveal-animation" style={{
           animationDelay: '0.2s'
