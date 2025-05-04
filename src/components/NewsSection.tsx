@@ -3,24 +3,24 @@ import { Button } from "@/components/ui/button";
 
 const newsArticles = [
   {
-    title: "Chàng tân kỹ sư phần mềm bước từ phòng lab ra thế giới",
+    title: "Thông tin mới về rau mầm",
     image: "public/lovable-uploads/4776a3a6-a829-4310-bc47-d0ac91a94fbc.png",
-    description: "Hồ Lê Minh Thạch chưa bao giờ nghĩ rằng có ngày mình trở thành một kỹ sư phần mềm, song chính nền tảng kiến thức vững chắc có được từ RMIT Việt Nam và trải nghiệm với khoa học và khoa học máy tính của Harvard đã đẩy lên đam mê lập trình và tiếp thêm sức mạnh để anh theo đuổi sự nghiệp này."
+    description: "Sau một thời gian dài giới thiệu và hướng dẫn sản xuất rau mầm, Công ty thấy nhu cầu sử dụng rau mầm của người dân rất lớn, nhất là ở thành phố đông dân này. Điều đó chứng tỏ người tiêu dùng ngày càng quan tâm đến những thực phẩm sạch, bổ dưỡng, đa dạng và tự mình có thể sản xuất được."
   },
   {
-    title: "Hành trình trưởng thành qua các cuộc thi của ba tân khoa RMIT",
+    title: "Rau mầm – nguồn thực phẩm sạch cho gia đình",
     image: "public/lovable-uploads/74dd7eb0-18ef-427b-bd42-45dcd0a8fde8.png",
-    description: "Bước ra khỏi vùng an toàn của lớp học để tranh tài ở các cuộc thi có thể là thử thách không nhỏ, nhưng giá trị mà sinh viên nhận được không dừng lại ở những chiếc cúp hay tấm huy chương."
+    description: "Rau mầm được cho là một trong những loại thức ăn hoàn hảo, bổ dưỡng và lành mạnh nhất. Gần đây, rau mầm đã trở thành một xu hướng thực phẩm sạch cho cuộc sống hiện đại và đã xuất hiện trong thực đơn nhiều món ăn phương Đông và phương Tây."
   },
   {
-    title: "Các chiêu trò lừa đảo trên Facebook đang gây tổn hại cho ngành du lịch Việt",
+    title: "Hoa ngày tết",
     image: "public/lovable-uploads/9eb93da7-cce2-48f0-9307-bc56cc042076.png",
-    description: "Trong không khí đón kỳ nghỉ lễ 30/4-1/5 và mùa du lịch hè, Tiến sĩ Daisy Kanagasapapathy cảnh báo rằng các vụ lừa đảo trực tuyến nhằm vào khách du lịch có thể sẽ tăng cao."
+    description: "Từ lâu đời, hoa là một phần hầu như không thể thiếu được trong ngày tết, vì thế từ xa xưa đã hình thành các làng hoa, để mỗi độ cuối năm lại hẹn nhau phiên chợ hoa xuân. Nhằm phục vụ nhu cầu làm đẹp cho khuôn viên nhà mình trong những ngày tết sắp tới. Công ty Trang Nông đặc biệt có cung cấp nhiều chủng loại hạt giống hoa đẹp, lạ mắt, dễ trồng, tốn ít diện tích, phù hợp trồng trong chậu, ngoài hàng hiên, được Công ty nhập về từ Thái Lan."
   },
   {
-    title: "Đại học RMIT Việt Nam nhận giải thưởng Rồng Vàng lần thứ 21",
+    title: "Rau quả mang lại điều kỳ diệu gì cho bạn?",
     image: "public/lovable-uploads/4776a3a6-a829-4310-bc47-d0ac91a94fbc.png",
-    description: "Đại học RMIT Việt Nam một lần nữa được vinh danh với giải thưởng Rồng Vàng danh giá, đánh dấu lần thứ 21 nhà trường nhận được vinh dự này."
+    description: "Thư giãn - Sự kỳ diệu của các loại rau quả là đem đến cho các bạn gái sức khoẻ và tuổi trẻ bằng các loại vitamin tự nhiên. Chúng khiến cho quá trình lão hoá của bạn chậm lại và khiến cơ làn da luôn mịn màng, nếp nhăn biến mất và vóc dáng cân đối, nhanh nhẹn. Có ít nhất 10 loại rau quả đem đến điều kỳ diệu ấy."
   }
 ];
 

@@ -4,12 +4,13 @@ const AboutSection = () => {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1 reveal-animation">
-            <h2 className="text-3xl md:text-4xl font-bold text-agri-green-dark mb-6">Về công ty Trang Nông</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-agri-green-dark mb-6">Về công ty Trang N��ng</h2>
             <p className="text-lg text-gray-700 mb-6">Công ty Trang Nông chuyên sản xuất kinh doanh, xuất nhập khẩu hạt giống F1, OP rau củ quả, thuốc bảo vệ thực vật, phân bón và vật tư nông nghiệp. Từ năm 1996, công ty đã trở thành thành viên của Hiệp hội Giống Châu Á Thái Bình Dương (APSA) và hiện là thành viên của Hiệp hội Thương mại Giống cây trồng Việt Nam (VSTA). Sản phẩm giống cây trồng của công ty đã đạt nhiều giải thưởng quan trọng trong ngành nông nghiệp.</p>
             
             <div className="flex flex-wrap gap-4">
-              
-              <Button variant="outline" className="border-agri-green text-agri-green hover:bg-agri-green hover:text-white">Read more about us</Button>
+              <Button variant="outline" className="border-agri-green text-agri-green hover:bg-agri-green hover:text-white">
+                Tìm hiểu thêm về công ty
+              </Button>
             </div>
           </div>
           <div className="order-1 lg:order-2 reveal-animation">
