@@ -51,10 +51,7 @@ const ContactSection = () => {
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-950">Liên hệ với chúng tôi</h2>
-          <p className="text-lg text-agri-cream-light max-w-3xl mx-auto text-slate-950">
-            Quý khách quan tâm đến sản phẩm hoặc có câu hỏi về nông nghiệp bền vững? 
-            Liên hệ với chúng tôi và đội ngũ của chúng tôi sẽ phản hồi trong thời gian sớm nhất.
-          </p>
+          
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
