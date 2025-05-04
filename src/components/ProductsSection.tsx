@@ -1,27 +1,22 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 
 const products = [
   {
     name: "Đậu đũa cây TN 364",
-    image: "public/lovable-uploads/f1cdbbac-6428-4332-baa0-acc9c6dcca9e.png",
-    buttonText: "Xem thêm về Đậu đũa cây TN 364"
+    image: "public/lovable-uploads/e43e05af-3bda-4c89-bc36-d409e05d00c3.png",
   },
   {
     name: "Đậu côve Nhật TN 322",
-    image: "public/lovable-uploads/2315fd13-a365-44a3-b1f7-459dbc588157.png",
-    buttonText: "Xem thêm về Đậu côve Nhật TN 322"
+    image: "public/lovable-uploads/69149498-9fb8-4484-abdb-3a451aa002a0.png",
   },
   {
     name: "Dưa lê Queen F1 TN 480",
-    image: "public/lovable-uploads/0a92ca13-6a4a-44c0-b774-b91297c75c05.png",
-    buttonText: "Xem thêm về Dưa lê Queen F1 TN 480"
+    image: "public/lovable-uploads/8aaf09f6-788a-4f1b-93d1-70841f9240da.png",
   },
   {
     name: "Dưa lê Kim Ngân F1 TN 463",
-    image: "public/lovable-uploads/d478425b-a7e7-432a-9661-9846d8f6c6b8.png",
-    buttonText: "Xem thêm về Dưa lê Kim Ngân F1 TN 463"
+    image: "public/lovable-uploads/17fa5bca-2aad-4159-896c-47ed59475bf7.png",
   }
 ];
 
@@ -29,8 +24,8 @@ const ProductsSection = () => {
   return (
     <section id="products" className="section-padding bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-agri-green-dark mb-8">Sản phẩm mới</h2>
+        <div className="mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-agri-green-dark mb-4 text-left">Sản phẩm mới</h2>
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

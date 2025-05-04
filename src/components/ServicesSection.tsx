@@ -44,31 +44,31 @@ const ServicesSection = () => {
       title: "Hoa",
       description: "Các loại hạt giống hoa đẹp, chất lượng cao, phù hợp với điều kiện khí hậu Việt Nam và có tỷ lệ nảy mầm tốt.",
       icon: <Flower className="w-10 h-10" />,
-      ctaText: "xem thêm các hạt giống hoa"
+      ctaText: "Xem thêm các hạt giống hoa"
     },
     {
       title: "Rau mầm",
       description: "Hạt giống rau mầm sạch, an toàn với đa dạng các loại như đậu Hà Lan, đậu xanh, cải mầm và nhiều loại khác.",
       icon: <Sprout className="w-10 h-10" />,
-      ctaText: "xem thêm các hạt giống rau mầm"
+      ctaText: "Xem thêm các hạt giống rau mầm"
     },
     {
       title: "Rau ăn lá",
       description: "Đa dạng các loại hạt giống rau ăn lá chất lượng cao, dễ trồng, năng suất lớn và phù hợp với điều kiện canh tác Việt Nam.",
       icon: <LeafyGreen className="w-10 h-10" />,
-      ctaText: "xem thêm các hạt giống rau ăn lá"
+      ctaText: "Xem thêm các hạt giống rau ăn lá"
     },
     {
       title: "Hạt giống khác",
       description: "Các loại hạt giống đặc biệt, đa dạng chủng loại từ rau củ, quả đến thảo mộc và cây thuốc nam với chất lượng đảm bảo.",
       icon: <Wheat className="w-10 h-10" />,
-      ctaText: "xem thêm các hạt giống khác"
+      ctaText: "Xem thêm các hạt giống khác"
     },
     {
       title: "Vật tư nông nghiệp",
       description: "Cung cấp đầy đủ các loại vật tư, dụng cụ và thiết bị cần thiết cho hoạt động trồng trọt từ nhỏ đến quy mô lớn.",
       icon: <Wrench className="w-10 h-10" />,
-      ctaText: "xem thêm vật tư nông nghiệp"
+      ctaText: "Xem thêm vật tư nông nghiệp"
     }
   ];
 
