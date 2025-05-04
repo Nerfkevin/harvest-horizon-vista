@@ -3,10 +3,10 @@ import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 
 const HeroSection = () => {
-  const scrollToServices = () => {
-    const servicesSection = document.getElementById('services');
-    if (servicesSection) {
-      servicesSection.scrollIntoView({ behavior: 'smooth' });
+  const scrollToProducts = () => {
+    const productsSection = document.getElementById('products');
+    if (productsSection) {
+      productsSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -29,15 +29,12 @@ const HeroSection = () => {
           <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
             Giải pháp nông nghiệp bền vững, hạt giống chất lượng cao
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex justify-center">
             <Button 
               className="bg-green-600 hover:bg-green-700 text-white text-lg py-6 px-8" 
-              onClick={scrollToServices}
+              onClick={scrollToProducts}
             >
-              Khám phá dịch vụ
-            </Button>
-            <Button variant="outline" className="border-white text-white hover:bg-white hover:text-green-700 text-lg py-6 px-8">
-              Tìm hiểu về chúng tôi
+              Tìm hiểu các dòng sản phẩm
             </Button>
           </div>
         </div>

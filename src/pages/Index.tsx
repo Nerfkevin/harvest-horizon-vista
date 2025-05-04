@@ -11,9 +11,13 @@ import Footer from '../components/Footer';
 import RevealOnScroll from '../components/RevealOnScroll';
 
 const Index = () => {
+  const [language, setLanguage] = useState<'vi' | 'en'>('vi');
+
   useEffect(() => {
     // Update page title
-    document.title = "Trang Nông - Giải pháp nông nghiệp bền vững";
+    document.title = language === 'vi' 
+      ? "Trang Nông - Giải pháp nông nghiệp bền vững"
+      : "Trang Nông - Sustainable Agricultural Solutions";
     
     // Apply animation to elements with reveal-animation class
     const handleScroll = () => {
@@ -31,10 +35,20 @@ const Index = () => {
     handleScroll();
     window.addEventListener('scroll', handleScroll);
     
+    // Setup language change listener
+    const navbarLanguageListener = (event: CustomEvent) => {
+      if (event.detail && (event.detail.language === 'vi' || event.detail.language === 'en')) {
+        setLanguage(event.detail.language);
+      }
+    };
+    
+    window.addEventListener('languageChange', navbarLanguageListener as EventListener);
+    
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('languageChange', navbarLanguageListener as EventListener);
     };
-  }, []);
+  }, [language]);
 
   return (
     <div className="min-h-screen">

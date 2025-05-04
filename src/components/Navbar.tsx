@@ -2,7 +2,12 @@
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Globe } from 'lucide-react';
-import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
+import { 
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger
+} from "@/components/ui/dropdown-menu";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,8 +27,8 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleLanguage = () => {
-    setLanguage(language === 'vi' ? 'en' : 'vi');
+  const toggleLanguage = (lang: 'vi' | 'en') => {
+    setLanguage(lang);
   };
 
   const navItems = language === 'vi' ? [
@@ -68,22 +73,44 @@ const Navbar = () => {
           >
             {contactText}
           </Button>
-          <button onClick={toggleLanguage} className="flex items-center gap-1 px-2 py-1 rounded text-sm">
-            <Globe size={18} className={isScrolled ? "text-green-600" : "text-white"} />
-            <span className={`uppercase font-medium ${isScrolled ? "text-green-600" : "text-white"}`}>
-              {language === 'vi' ? 'EN' : 'VI'}
-            </span>
-          </button>
+          
+          <DropdownMenu>
+            <DropdownMenuTrigger className="flex items-center gap-1 px-2 py-1 rounded text-sm">
+              <Globe size={18} className={isScrolled ? "text-green-600" : "text-white"} />
+              <span className={`font-medium ${isScrolled ? "text-green-600" : "text-white"}`}>
+                {language === 'vi' ? 'Tiếng Việt' : 'English'}
+              </span>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem onClick={() => toggleLanguage('vi')}>
+                Tiếng Việt
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => toggleLanguage('en')}>
+                English
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </nav>
 
         {/* Mobile Navigation Button */}
         <div className="md:hidden flex items-center gap-4">
-          <button onClick={toggleLanguage} className="flex items-center gap-1 px-2 py-1 rounded text-sm">
-            <Globe size={18} className={isScrolled ? "text-green-600" : "text-white"} />
-            <span className={`uppercase font-medium ${isScrolled ? "text-green-600" : "text-white"}`}>
-              {language === 'vi' ? 'EN' : 'VI'}
-            </span>
-          </button>
+          <DropdownMenu>
+            <DropdownMenuTrigger className="flex items-center gap-1 px-2 py-1 rounded text-sm">
+              <Globe size={18} className={isScrolled ? "text-green-600" : "text-white"} />
+              <span className={`font-medium ${isScrolled ? "text-green-600" : "text-white"}`}>
+                {language === 'vi' ? 'Tiếng Việt' : 'English'}
+              </span>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem onClick={() => toggleLanguage('vi')}>
+                Tiếng Việt
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => toggleLanguage('en')}>
+                English
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+          
           <button 
             className="p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
