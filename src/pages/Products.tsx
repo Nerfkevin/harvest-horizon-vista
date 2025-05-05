@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Button } from "@/components/ui/button";
@@ -19,37 +20,41 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 const categories = [
   {
     title: "Hạt giống rau",
+    titleEn: "Vegetable Seeds",
     image: "public/lovable-uploads/e43e05af-3bda-4c89-bc36-d409e05d00c3.png",
     products: [
-      { id: 1, name: "Đậu đũa cây TN 364", image: "public/lovable-uploads/e43e05af-3bda-4c89-bc36-d409e05d00c3.png", code: "TN 364" },
-      { id: 2, name: "Đậu côve Nhật TN 322", image: "public/lovable-uploads/69149498-9fb8-4484-abdb-3a451aa002a0.png", code: "TN 322" },
-      { id: 3, name: "Rau mầm đỏ TN 6", image: "public/lovable-uploads/e9c55f1e-64e5-4f87-82ed-b65e938b4cd5.png", code: "TN 6" },
+      { id: 1, name: "Đậu đũa cây TN 364", nameEn: "Green Beans TN 364", image: "public/lovable-uploads/e43e05af-3bda-4c89-bc36-d409e05d00c3.png", code: "TN 364" },
+      { id: 2, name: "Đậu côve Nhật TN 322", nameEn: "Japanese Cowpea TN 322", image: "public/lovable-uploads/69149498-9fb8-4484-abdb-3a451aa002a0.png", code: "TN 322" },
+      { id: 3, name: "Rau mầm đỏ TN 6", nameEn: "Red Sprouts TN 6", image: "public/lovable-uploads/e9c55f1e-64e5-4f87-82ed-b65e938b4cd5.png", code: "TN 6" },
     ]
   },
   {
     title: "Hạt giống hoa",
+    titleEn: "Flower Seeds",
     image: "public/lovable-uploads/2315fd13-a365-44a3-b1f7-459dbc588157.png",
     products: [
-      { id: 4, name: "Hoa cúc Tím Nhật F1", image: "public/lovable-uploads/2315fd13-a365-44a3-b1f7-459dbc588157.png", code: "TN 576" },
-      { id: 5, name: "Hoa vạn thọ Pháp", image: "public/lovable-uploads/4776a3a6-a829-4310-bc47-d0ac91a94fbc.png", code: "TN 586" },
+      { id: 4, name: "Hoa cúc Tím Nhật F1", nameEn: "Japanese Purple Chrysanthemum F1", image: "public/lovable-uploads/2315fd13-a365-44a3-b1f7-459dbc588157.png", code: "TN 576" },
+      { id: 5, name: "Hoa vạn thọ Pháp", nameEn: "French Marigold", image: "public/lovable-uploads/4776a3a6-a829-4310-bc47-d0ac91a94fbc.png", code: "TN 586" },
     ]
   },
   {
     title: "Hạt giống dưa",
+    titleEn: "Melon Seeds",
     image: "public/lovable-uploads/8aaf09f6-788a-4f1b-93d1-70841f9240da.png",
     products: [
-      { id: 6, name: "Dưa lê Queen F1", image: "public/lovable-uploads/8aaf09f6-788a-4f1b-93d1-70841f9240da.png", code: "TN 480" },
-      { id: 7, name: "Dưa lê Kim Ngân F1", image: "public/lovable-uploads/17fa5bca-2aad-4159-896c-47ed59475bf7.png", code: "TN 463" },
-      { id: 8, name: "Dưa lê Kim Hoàng F1", image: "public/lovable-uploads/e9c55f1e-64e5-4f87-82ed-b65e938b4cd5.png", code: "TN 465" },
+      { id: 6, name: "Dưa lê Queen F1", nameEn: "Queen Melon F1", image: "public/lovable-uploads/8aaf09f6-788a-4f1b-93d1-70841f9240da.png", code: "TN 480" },
+      { id: 7, name: "Dưa lê Kim Ngân F1", nameEn: "Kim Ngan Melon F1", image: "public/lovable-uploads/17fa5bca-2aad-4159-896c-47ed59475bf7.png", code: "TN 463" },
+      { id: 8, name: "Dưa lê Kim Hoàng F1", nameEn: "Kim Hoang Melon F1", image: "public/lovable-uploads/e9c55f1e-64e5-4f87-82ed-b65e938b4cd5.png", code: "TN 465" },
     ]
   },
   {
     title: "Hạt giống khác",
+    titleEn: "Other Seeds",
     image: "public/lovable-uploads/3f3cc3c0-2b29-4c47-9de0-e368fb251533.png",
     products: [
-      { id: 9, name: "Cải thìa trường Mại F1", image: "public/lovable-uploads/e9c55f1e-64e5-4f87-82ed-b65e938b4cd5.png", code: "TN 289" },
-      { id: 10, name: "Cải bẹ công TN", image: "public/lovable-uploads/e9c55f1e-64e5-4f87-82ed-b65e938b4cd5.png", code: "TN 269" },
-      { id: 11, name: "Dưa lê Kim Huệ F1", image: "public/lovable-uploads/e9c55f1e-64e5-4f87-82ed-b65e938b4cd5.png", code: "TN 463" },
+      { id: 9, name: "Cải thìa trường Mại F1", nameEn: "Pak Choi Mai F1", image: "public/lovable-uploads/e9c55f1e-64e5-4f87-82ed-b65e938b4cd5.png", code: "TN 289" },
+      { id: 10, name: "Cải bẹ công TN", nameEn: "Mustard Greens TN", image: "public/lovable-uploads/e9c55f1e-64e5-4f87-82ed-b65e938b4cd5.png", code: "TN 269" },
+      { id: 11, name: "Dưa lê Kim Huệ F1", nameEn: "Kim Hue Melon F1", image: "public/lovable-uploads/e9c55f1e-64e5-4f87-82ed-b65e938b4cd5.png", code: "TN 463" },
     ]
   },
 ];
@@ -58,30 +63,63 @@ const Products = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [language, setLanguage] = useState<'vi' | 'en'>('vi');
+
+  useEffect(() => {
+    const handleLanguageChange = (event: CustomEvent) => {
+      if (event.detail && (event.detail.language === 'vi' || event.detail.language === 'en')) {
+        setLanguage(event.detail.language);
+      }
+    };
+    
+    window.addEventListener('languageChange', handleLanguageChange as EventListener);
+    
+    return () => {
+      window.removeEventListener('languageChange', handleLanguageChange as EventListener);
+    };
+  }, []);
 
   // Filter products based on search query and active category
   const filteredProducts = categories.flatMap(category => {
-    if (activeCategory && category.title !== activeCategory) {
+    if (activeCategory && (language === 'vi' ? category.title : category.titleEn) !== activeCategory) {
       return [];
     }
 
-    return category.products.filter(product =>
-      product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      product.code.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    return category.products.filter(product => {
+      const productName = language === 'vi' ? product.name : product.nameEn;
+      return productName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        product.code.toLowerCase().includes(searchQuery.toLowerCase());
+    });
   });
+
+  // Text translations based on language
+  const translations = {
+    pageTitle: language === 'vi' ? 'Sản phẩm của Trang Nông' : 'Trang Nông Products',
+    pageDescription: language === 'vi' 
+      ? 'Khám phá danh mục sản phẩm đa dạng của chúng tôi với các loại hạt giống cây trồng chất lượng cao, đảm bảo năng suất và phù hợp với điều kiện canh tác Việt Nam.'
+      : 'Explore our diverse product catalog featuring high-quality plant seeds that ensure productivity and are suitable for Vietnamese farming conditions.',
+    allCategories: language === 'vi' ? 'Tất cả danh mục' : 'All Categories',
+    allCategoriesDesc: language === 'vi' ? 'Xem tất cả sản phẩm của Trang Nông' : 'View all Trang Nông products',
+    searchPlaceholder: language === 'vi' ? 'Tìm kiếm sản phẩm...' : 'Search products...',
+    clearFilters: language === 'vi' ? 'Xóa bộ lọc' : 'Clear filters',
+    noProducts: language === 'vi' ? 'Không tìm thấy sản phẩm nào' : 'No products found',
+    productCount: (count: number) => language === 'vi' ? `${count} sản phẩm` : `${count} products`,
+    categoriesTitle: language === 'vi' ? 'Danh mục sản phẩm' : 'Product Categories',
+    viewProducts: language === 'vi' ? 'Xem toàn bộ sản phẩm' : 'View all products',
+    productDetails: language === 'vi' ? 'Xem chi tiết sản phẩm' : 'View product details',
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
       <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="bg-green-50 py-12 md:py-16">
+        {/* Hero Section - Adding more margin-top */}
+        <section className="bg-green-50 py-12 md:py-16 mt-16 md:mt-20">
           <div className="container mx-auto px-4">
-            <h1 className="text-3xl md:text-4xl font-bold text-green-800 mb-4">Sản phẩm của Trang Nông</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-green-800 mb-4">{translations.pageTitle}</h1>
             <p className="text-lg text-green-700 max-w-3xl">
-              Khám phá danh mục sản phẩm đa dạng của chúng tôi với các loại hạt giống cây trồng chất lượng cao, đảm bảo năng suất và phù hợp với điều kiện canh tác Việt Nam.
+              {translations.pageDescription}
             </p>
           </div>
         </section>
@@ -96,7 +134,7 @@ const Products = () => {
                   <NavigationMenuList>
                     <NavigationMenuItem>
                       <NavigationMenuTrigger className="bg-white hover:bg-gray-50">
-                        {activeCategory || "Tất cả danh mục"}
+                        {activeCategory || translations.allCategories}
                       </NavigationMenuTrigger>
                       <NavigationMenuContent>
                         <ul className="grid w-[400px] gap-3 p-4">
@@ -107,21 +145,21 @@ const Products = () => {
                                 onClick={() => setActiveCategory(null)}
                               >
                                 <div className="mb-2 mt-4 text-lg font-medium text-green-800">
-                                  Tất cả danh mục
+                                  {translations.allCategories}
                                 </div>
                                 <p className="text-sm text-green-600">
-                                  Xem tất cả sản phẩm của Trang Nông
+                                  {translations.allCategoriesDesc}
                                 </p>
                               </a>
                             </NavigationMenuLink>
                           </li>
                           {categories.map((category) => (
                             <ListItem
-                              key={category.title}
-                              title={category.title}
-                              onClick={() => setActiveCategory(category.title)}
+                              key={language === 'vi' ? category.title : category.titleEn}
+                              title={language === 'vi' ? category.title : category.titleEn}
+                              onClick={() => setActiveCategory(language === 'vi' ? category.title : category.titleEn)}
                             >
-                              {category.products.length} sản phẩm
+                              {translations.productCount(category.products.length)}
                             </ListItem>
                           ))}
                         </ul>
@@ -136,7 +174,7 @@ const Products = () => {
                 <div className="relative">
                   <input
                     type="text"
-                    placeholder="Tìm kiếm sản phẩm..."
+                    placeholder={translations.searchPlaceholder}
                     className="w-full py-2 px-4 pr-10 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
@@ -180,16 +218,16 @@ const Products = () => {
                   onClick={() => setActiveCategory(null)}
                   className="whitespace-nowrap"
                 >
-                  Tất cả
+                  {language === 'vi' ? 'Tất cả' : 'All'}
                 </TabsTrigger>
                 {categories.map((category) => (
                   <TabsTrigger 
-                    key={category.title}
-                    value={category.title}
-                    onClick={() => setActiveCategory(category.title)}
+                    key={language === 'vi' ? category.title : category.titleEn}
+                    value={language === 'vi' ? category.title : category.titleEn}
+                    onClick={() => setActiveCategory(language === 'vi' ? category.title : category.titleEn)}
                     className="whitespace-nowrap"
                   >
-                    {category.title}
+                    {language === 'vi' ? category.title : category.titleEn}
                   </TabsTrigger>
                 ))}
               </TabsList>
@@ -210,13 +248,15 @@ const Products = () => {
                   <ProductCard 
                     key={product.id} 
                     product={product} 
-                    viewMode={viewMode} 
+                    viewMode={viewMode}
+                    language={language}
+                    detailsText={translations.productDetails}
                   />
                 ))}
               </div>
             ) : (
               <div className="flex flex-col items-center justify-center py-12">
-                <p className="text-xl text-gray-600 mb-4">Không tìm thấy sản phẩm nào</p>
+                <p className="text-xl text-gray-600 mb-4">{translations.noProducts}</p>
                 <Button 
                   onClick={() => {
                     setSearchQuery("");
@@ -224,7 +264,7 @@ const Products = () => {
                   }}
                   className="bg-green-600"
                 >
-                  Xóa bộ lọc
+                  {translations.clearFilters}
                 </Button>
               </div>
             )}
@@ -235,29 +275,29 @@ const Products = () => {
         {!searchQuery && !activeCategory && (
           <section className="py-12 bg-green-50">
             <div className="container mx-auto px-4">
-              <h2 className="text-2xl font-bold text-green-800 mb-8">Danh mục sản phẩm</h2>
+              <h2 className="text-2xl font-bold text-green-800 mb-8">{translations.categoriesTitle}</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {categories.map((category) => (
                   <div 
-                    key={category.title}
+                    key={language === 'vi' ? category.title : category.titleEn}
                     className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
                   >
                     <div className="aspect-w-1 aspect-h-9">
                       <img 
                         src={category.image} 
-                        alt={category.title} 
+                        alt={language === 'vi' ? category.title : category.titleEn} 
                         className="w-full h-48 object-cover"
                       />
                     </div>
                     <div className="p-4">
-                      <h3 className="text-lg font-semibold text-green-800">{category.title}</h3>
-                      <p className="text-sm text-gray-600 mt-1">{category.products.length} sản phẩm</p>
+                      <h3 className="text-lg font-semibold text-green-800">{language === 'vi' ? category.title : category.titleEn}</h3>
+                      <p className="text-sm text-gray-600 mt-1">{translations.productCount(category.products.length)}</p>
                       <Button 
                         className="w-full mt-4 bg-green-600" 
-                        onClick={() => setActiveCategory(category.title)}
+                        onClick={() => setActiveCategory(language === 'vi' ? category.title : category.titleEn)}
                       >
-                        Xem sản phẩm
+                        {translations.viewProducts}
                       </Button>
                     </div>
                   </div>
@@ -274,14 +314,24 @@ const Products = () => {
 };
 
 // Custom Components
-const ProductCard = ({ product, viewMode }: { product: any, viewMode: 'grid' | 'list' }) => {
+const ProductCard = ({ 
+  product, 
+  viewMode, 
+  language, 
+  detailsText 
+}: { 
+  product: any, 
+  viewMode: 'grid' | 'list', 
+  language: 'vi' | 'en',
+  detailsText: string
+}) => {
   if (viewMode === 'grid') {
     return (
       <Card className="overflow-hidden hover:shadow-lg transition-shadow">
         <div className="aspect-w-1 aspect-h-1">
           <img 
             src={product.image} 
-            alt={product.name} 
+            alt={language === 'vi' ? product.name : product.nameEn} 
             className="w-full h-52 object-contain p-4 bg-white"
           />
         </div>
@@ -289,9 +339,9 @@ const ProductCard = ({ product, viewMode }: { product: any, viewMode: 'grid' | '
           <div className="bg-green-50 text-green-700 text-xs font-semibold px-2 py-1 rounded inline-block mb-2">
             {product.code}
           </div>
-          <h3 className="font-medium text-lg mb-2 text-green-800">{product.name}</h3>
+          <h3 className="font-medium text-lg mb-2 text-green-800">{language === 'vi' ? product.name : product.nameEn}</h3>
           <Button className="w-full mt-2 bg-green-600">
-            Chi tiết
+            {detailsText}
           </Button>
         </CardContent>
       </Card>
@@ -303,7 +353,7 @@ const ProductCard = ({ product, viewMode }: { product: any, viewMode: 'grid' | '
           <div className="w-full md:w-1/4">
             <img 
               src={product.image} 
-              alt={product.name} 
+              alt={language === 'vi' ? product.name : product.nameEn} 
               className="w-full h-48 object-contain p-4 bg-white"
             />
           </div>
@@ -312,11 +362,11 @@ const ProductCard = ({ product, viewMode }: { product: any, viewMode: 'grid' | '
               <div className="bg-green-50 text-green-700 text-xs font-semibold px-2 py-1 rounded inline-block mb-2">
                 {product.code}
               </div>
-              <h3 className="font-medium text-lg mb-2 text-green-800">{product.name}</h3>
+              <h3 className="font-medium text-lg mb-2 text-green-800">{language === 'vi' ? product.name : product.nameEn}</h3>
             </div>
             <div className="flex justify-end">
               <Button className="bg-green-600">
-                Chi tiết
+                {detailsText}
               </Button>
             </div>
           </div>

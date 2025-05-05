@@ -52,7 +52,7 @@ const Navbar = () => {
   const contactText = language === 'vi' ? 'Liên hệ' : 'Contact';
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
+    <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-white py-4'}`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-2">
           <img 
@@ -85,8 +85,8 @@ const Navbar = () => {
           
           <DropdownMenu>
             <DropdownMenuTrigger className="flex items-center gap-1 px-2 py-1 rounded text-sm">
-              <Globe size={18} className={isScrolled ? "text-green-600" : "text-white"} />
-              <span className={`font-medium ${isScrolled ? "text-green-600" : "text-white"}`}>
+              <Globe size={18} className="text-green-600" />
+              <span className="font-medium text-green-600">
                 {language === 'vi' ? 'Tiếng Việt' : 'English'}
               </span>
             </DropdownMenuTrigger>
@@ -105,8 +105,8 @@ const Navbar = () => {
         <div className="md:hidden flex items-center gap-4">
           <DropdownMenu>
             <DropdownMenuTrigger className="flex items-center gap-1 px-2 py-1 rounded text-sm">
-              <Globe size={18} className={isScrolled ? "text-green-600" : "text-white"} />
-              <span className={`font-medium ${isScrolled ? "text-green-600" : "text-white"}`}>
+              <Globe size={18} className="text-green-600" />
+              <span className="font-medium text-green-600">
                 {language === 'vi' ? 'Tiếng Việt' : 'English'}
               </span>
             </DropdownMenuTrigger>
@@ -124,9 +124,9 @@ const Navbar = () => {
             className="p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            <div className={`w-6 h-0.5 mb-1.5 ${isScrolled ? 'bg-green-600' : 'bg-white'} transition-all ${isMobileMenuOpen ? 'transform rotate-45 translate-y-2' : ''}`}></div>
-            <div className={`w-6 h-0.5 mb-1.5 ${isScrolled ? 'bg-green-600' : 'bg-white'} transition-all ${isMobileMenuOpen ? 'opacity-0' : ''}`}></div>
-            <div className={`w-6 h-0.5 ${isScrolled ? 'bg-green-600' : 'bg-white'} transition-all ${isMobileMenuOpen ? 'transform -rotate-45 -translate-y-2' : ''}`}></div>
+            <div className={`w-6 h-0.5 mb-1.5 bg-green-600 transition-all ${isMobileMenuOpen ? 'transform rotate-45 translate-y-2' : ''}`}></div>
+            <div className={`w-6 h-0.5 mb-1.5 bg-green-600 transition-all ${isMobileMenuOpen ? 'opacity-0' : ''}`}></div>
+            <div className={`w-6 h-0.5 bg-green-600 transition-all ${isMobileMenuOpen ? 'transform -rotate-45 -translate-y-2' : ''}`}></div>
           </button>
         </div>
       </div>
@@ -181,8 +181,7 @@ const NavLinks = ({ navItems, mobile = false, isScrolled = true }: NavLinkProps)
             href={item.href}
             className={`
               font-medium transition-colors hover:text-green-700
-              ${mobile ? 'block py-2 text-green-600' : ''}
-              ${!isScrolled && !mobile ? 'text-white' : 'text-green-600'}
+              ${mobile ? 'block py-2 text-green-600' : 'text-green-600'}
             `}
             onClick={(e) => {
               if (isHashLink) {
@@ -206,8 +205,7 @@ const NavLinks = ({ navItems, mobile = false, isScrolled = true }: NavLinkProps)
             to={item.href}
             className={`
               font-medium transition-colors hover:text-green-700
-              ${mobile ? 'block py-2 text-green-600' : ''}
-              ${!isScrolled && !mobile ? 'text-white' : 'text-green-600'}
+              ${mobile ? 'block py-2 text-green-600' : 'text-green-600'}
             `}
           >
             {item.name}
