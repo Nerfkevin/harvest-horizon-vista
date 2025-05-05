@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 
 const products = [
@@ -52,6 +53,14 @@ const ProductsSection = () => {
               </h3>
             </div>
           ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <Link to="/products">
+            <Button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3">
+              Xem tất cả sản phẩm
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

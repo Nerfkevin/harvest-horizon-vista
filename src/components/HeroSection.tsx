@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 
@@ -30,12 +31,13 @@ const HeroSection = () => {
             Giải pháp nông nghiệp bền vững, hạt giống chất lượng cao
           </p>
           <div className="flex justify-center">
-            <Button 
-              className="bg-green-600 hover:bg-green-700 text-white text-lg py-6 px-8" 
-              onClick={scrollToProducts}
-            >
-              Tìm hiểu các dòng sản phẩm
-            </Button>
+            <Link to="/products">
+              <Button 
+                className="bg-green-600 hover:bg-green-700 text-white text-lg py-6 px-8" 
+              >
+                Tìm hiểu các dòng sản phẩm
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

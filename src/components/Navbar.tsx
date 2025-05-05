@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Globe } from 'lucide-react';
 import { 
@@ -29,18 +30,23 @@ const Navbar = () => {
 
   const toggleLanguage = (lang: 'vi' | 'en') => {
     setLanguage(lang);
+    // Dispatch a custom event that the Index component can listen for
+    const event = new CustomEvent('languageChange', { detail: { language: lang } });
+    window.dispatchEvent(event);
   };
 
   const navItems = language === 'vi' ? [
-    { name: 'Giới thiệu', href: '#about' },
-    { name: 'Sản phẩm', href: '#products' },
-    { name: 'Tư vấn', href: '#services' },
-    { name: 'Tin tức', href: '#testimonials' },
+    { name: 'Trang chủ', href: '/' },
+    { name: 'Giới thiệu', href: '/#about' },
+    { name: 'Sản phẩm', href: '/products' },
+    { name: 'Tư vấn', href: '/#services' },
+    { name: 'Tin tức', href: '/#news' },
   ] : [
-    { name: 'About', href: '#about' },
-    { name: 'Products', href: '#products' },
-    { name: 'Consulting', href: '#services' },
-    { name: 'News', href: '#testimonials' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/#about' },
+    { name: 'Products', href: '/products' },
+    { name: 'Consulting', href: '/#services' },
+    { name: 'News', href: '/#news' },
   ];
 
   const contactText = language === 'vi' ? 'Liên hệ' : 'Contact';
@@ -48,13 +54,13 @@ const Navbar = () => {
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <a href="#" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2">
           <img 
             src="/public/lovable-uploads/d74f11c2-430e-4a75-91f1-26de8238f16f.png" 
             alt="Trang Nông Logo" 
             className="h-10 md:h-12"
           />
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
@@ -68,6 +74,9 @@ const Navbar = () => {
               const contactSection = document.getElementById('contact');
               if (contactSection) {
                 contactSection.scrollIntoView({ behavior: 'smooth' });
+              } else {
+                // If we're not on the homepage, navigate to homepage/#contact
+                window.location.href = '/#contact';
               }
             }}
           >
@@ -138,6 +147,9 @@ const Navbar = () => {
                 if (contactSection) {
                   contactSection.scrollIntoView({ behavior: 'smooth' });
                   setIsMobileMenuOpen(false);
+                } else {
+                  // If we're not on the homepage, navigate to homepage/#contact
+                  window.location.href = '/#contact';
                 }
               }}
             >
@@ -159,26 +171,49 @@ interface NavLinkProps {
 const NavLinks = ({ navItems, mobile = false, isScrolled = true }: NavLinkProps) => {
   return (
     <>
-      {navItems.map(item => (
-        <a 
-          key={item.name}
-          href={item.href}
-          className={`
-            font-medium transition-colors hover:text-green-700
-            ${mobile ? 'block py-2 text-green-600' : ''}
-            ${!isScrolled && !mobile ? 'text-white' : 'text-green-600'}
-          `}
-          onClick={(e) => {
-            e.preventDefault();
-            const element = document.querySelector(item.href);
-            if (element) {
-              element.scrollIntoView({ behavior: 'smooth' });
-            }
-          }}
-        >
-          {item.name}
-        </a>
-      ))}
+      {navItems.map(item => {
+        // Check if this is a hash link (like #about) or a full page link
+        const isHashLink = item.href.includes('#') && !item.href.startsWith('/');
+        
+        return isHashLink ? (
+          <a 
+            key={item.name}
+            href={item.href}
+            className={`
+              font-medium transition-colors hover:text-green-700
+              ${mobile ? 'block py-2 text-green-600' : ''}
+              ${!isScrolled && !mobile ? 'text-white' : 'text-green-600'}
+            `}
+            onClick={(e) => {
+              if (isHashLink) {
+                e.preventDefault();
+                const targetId = item.href.replace('#', '');
+                const element = document.getElementById(targetId);
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                } else if (item.href === '/#about' || item.href.includes('#')) {
+                  // If we're not on the homepage, navigate there
+                  window.location.href = item.href;
+                }
+              }
+            }}
+          >
+            {item.name}
+          </a>
+        ) : (
+          <Link
+            key={item.name}
+            to={item.href}
+            className={`
+              font-medium transition-colors hover:text-green-700
+              ${mobile ? 'block py-2 text-green-600' : ''}
+              ${!isScrolled && !mobile ? 'text-white' : 'text-green-600'}
+            `}
+          >
+            {item.name}
+          </Link>
+        );
+      })}
     </>
   );
 };
