@@ -1,5 +1,4 @@
-
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Button } from "@/components/ui/button";
@@ -244,7 +243,7 @@ const Products = () => {
                     key={category.title}
                     className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
                   >
-                    <div className="aspect-w-16 aspect-h-9">
+                    <div className="aspect-w-1 aspect-h-9">
                       <img 
                         src={category.image} 
                         alt={category.title} 
